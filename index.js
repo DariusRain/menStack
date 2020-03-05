@@ -7,7 +7,6 @@ const routes = require('./routes/api');
 const app = express();
 
 app.use(express.json());
-
 //initialize routes
 app.use(routes);
 
