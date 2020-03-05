@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const keys = require("./config/keys");
+const rooutes = require('./routes/api')
+
 
 const app = express();
 
