@@ -1,10 +1,15 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const keys = require("./config/keys");
+const routes = require('./routes/api');
+
 
 const app = express();
 
 app.use(express.json());
+//initialize routes
+app.use(routes);
+
 
 mongoose
   .connect(keys.mongoUri)
