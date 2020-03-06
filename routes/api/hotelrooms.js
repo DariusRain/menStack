@@ -21,7 +21,7 @@ router.put('/api/hotelRooms:id',function(req,res){
 });
 
 //DELETE hotel rooms
-router.delete('/api/hotelRooms/:id',function(req,res){
+router.delete('/api/hotelRoomsh/:id',function(req,res){
     res.send({type:'DELETE'});
 });
 
