@@ -1,5 +1,5 @@
 // Task 2: create hotel.js to send and get hotels from server (Pending)
-const clickSignUpElement = document.getElementById("click");
+const clickSignUpElement = document.getElementById("click"); 
 const searchInput = document.getElementById("search");
 searchInput.addEventListener("keynamess", searchHotels);
 clickSignUpElement.addEventListener("click", showHideById);
@@ -15,6 +15,12 @@ async function searchHotels() {
     console.log("Not Found");
   }
 }
+
+
+
+
+
+
 
 const getHotelsExample = (async () => {
   try {
@@ -38,9 +44,9 @@ const getHotelsExample = (async () => {
       img.style = "width: 100%; border-radius: 12px; border-style: solid; border-color:white;";
       img.setAttribute("src", elements.images[0]);
       div.className = "hotel-flex-item"
-        name.style = " font-weight: bold; font-size: 18px;"
+        name.style = " font-weight: bold; font-size: 12px;"
       name.setAttribute("href", "#");
-        location.style = 'font-size: 14px; font-weight: bold;'
+        location.style = 'font-size: 12px; font-weight: bold;'
       location.innerText = ` ${elements.city} ${elements.country} \n ${elements.address} \n ${elements.phone} `;
       name.innerText = `\n ${elements.name} ⭐${elements.stars}`;
         starsPrice.innerText = ` 💲 ${elements.price}`
