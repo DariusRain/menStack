@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon dr-index.js",
-    "enviroment-development": "./bash_scripts/set-env-dev"
+    "server": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

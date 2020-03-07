@@ -1,13 +1,32 @@
 const mongoose = require('mongoose')
+const roomsSchema = new mongoose.Schema({
+    description: {
+        type: String,
+        default: 'none'
+    },
+    roomOpen:{
+        type:Boolean,
+        default:true
+        
+    },
+    roomType: {
+        type: String,
+        default: 'Double Bedroom'
+    }
+})
 
 const hotelSchema = new mongoose.Schema({
-    name:{
+    hotelName:{
         required:true,
         type:String,
         
     },
     city:{
         required:true,
+        type:String
+    },
+    state: {
+        required: true,
         type:String
     },
     street:{
@@ -19,27 +38,19 @@ const hotelSchema = new mongoose.Schema({
         type:String,
         maxLength:15
     },
+    numberOfRooms: {
+        type: Number,
+        required: true
+    },
     rooms: [roomsSchema]
 })
 
-const roomsSchema = new mongoose.Schema({
-    roomSize:{
-       
-        required:true,
-        type:String 
-    },
-    roomOpen:{
-        available:Boolean,
-        default:true
-        
-    },
-})
 
 
 
 
 
-module.exports = mongoose.model('Hotels',hotelSchema)
+module.exports = mongoose.model('Hotels', hotelSchema)
 
 
 

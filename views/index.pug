@@ -1,0 +1,80 @@
+//- Task 1: update index.html to have a space to display hotels and a form field for hotels
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    link(rel='stylesheet' type='text/css' href='./styles.css')
+    script(src="script.js" defer)
+    title Document
+  body
+    header
+      .banner
+        .container-row
+          span(class="heading-text")  JavaScript Hotels
+          input(id="search" class="heading-search" type="text" name="search" placeholder="🔍Search Hotels")
+
+    div(class="jumbo")
+      ul(id="jumbo_text")
+        li Welecome to JavaScript Hotels!
+        li Are you a hotel owner? <span id="click" class="click" > Sign up here</span> 
+      div(id="search_div")   
+    div(class="container-column")
+      form(id="hotel_services" style="display:none" class="form-box-signup")
+        label(style="font-size: 20px;") Register your hotel?
+        hr
+        br
+        label Name
+        br
+        input(type="text" name="hotelName" placeholder="Hotel name" required)
+        br
+        label City
+        br
+        input(type="text" name="city" placeholder="City" required)
+        br
+        label State
+        br
+        input(type="text" name="state" placeholder="State" required)
+        br
+        label Street
+        br
+        input(type="text" name="street" placeholder="Street" required)
+        br
+        label Phone Number
+        br
+        input(type="tel" name="phoneNumber" placeholder="1-123-456-7890" required)
+        br
+        label Single Bedroom: 
+        br
+        input(type="number" class="room-num-input" name="singleBedrooms" placeholder="0" required)
+        br
+        label Double Bedrooms:
+        br
+        input(type="number" class="room-num-input" name="doubleBedrooms" placeholder="0" required)
+        br
+        label Triple Bedrooms: 
+        br
+        input(type="number" class="room-num-input" name="tripleBedrooms" placeholder="0" required)
+        br
+        label Quad Bedrooms: 
+        br
+        input(type="number" class="room-num-input" name="quadBedrooms" placeholder="0" required)
+        br
+        label King Bedrooms: 
+        br
+        input(type="number" class="room-num-input" name="kingBedrooms" placeholder="0" required)
+        br
+        label Queen Bedrooms: 
+        br
+        input(type="number" class="room-num-input" name="queenBedrooms" placeholder="0" required)
+        hr(style="width: 100%;")
+        button(type="submit" style="margin: 0 auto;") Submit
+    div(class="carrosell")
+      //- div(id="image_revolver")
+        img(src="https://bit.ly/3cyCQLE")
+    div(class="container-row" id="display_hotels")
+    
+  footer(class="footer")
+    span &copy; 2020 Recursive Scripters
+

@@ -1,27 +1,46 @@
 const mongoose = require("mongoose");
 const express = require("express");
-const PORT = process.env.PORT || 3000;
-const hotels = require("./routes/api/hotels")
-const keys = require("./config/keys");
-const routes = require('./routes/api/hotelrooms');
-
-
+const cors = require("cors");
 const app = express();
+const DB_CONNECTION = process.env.DB_CONNECTION;
+const PORT = process.env.PORT;
+const enviroment =  process.env.NODE_ENV || "Production"
+const path = require('path')
+const hotelsRoute = require('./routes/api/hotels');
+enviroment.toLowerCase()
 
-app.use(express.static('public'));
+
 app.use(express.json());
 
-app.use(express.urlencoded({ extended: false }));
-//initialize routes
-app.use('/api/hotels/rooms/', routes);
+// Adding cors
+app.use(cors())
 
+
+// Setting view engine to pug
+app.set("view engine", "pug")
+
+app.set("views", path.join("views"))
+app.use('/hotels', hotelsRoute)
+
+app.get('/', (req, res) => {
+  res.status(200).render('index')
+  
+})
 
 
 mongoose
-  .connect(keys.mongoUri,  { useNewUrlParser: true, useUnifiedTopology: true})
-  .then(() => console.log("connected to db"))
+  .connect(DB_CONNECTION, {useNewUrlParser: true, useUnifiedTopology: true})
+  .then(() => { 
+    if (enviroment === "development") console.log(`Enviroment: ${enviroment} \nDatabase: ${DB_CONNECTION}`)
+    else console.log("DB Connection Established")
+    
+})
   .catch(error => console.log("DB Connection error", error));
+  
+  app.use(express.static("public"));
 
-  app.use('/api/hotels/', hotels);
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+app.listen(PORT, () => { 
+if(enviroment === "development") console.log(`Server is listening on port ${PORT}...`)
+else console.log("Server is listening...")
+});

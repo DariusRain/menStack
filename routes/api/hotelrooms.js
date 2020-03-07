@@ -1,27 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const hotelRooms = require("../models/hotelrooms");
+const Hotel = require("../../models/Hotel");
 
 //GET all hotel rooms
-router.get('/api/hotelRooms',function(req,res){
+
+router.get('/',function(req,res){
     res.send({type:'GET'});
 });
 
 
 
 //ADD new hotel rooms to database
-router.post('/api/hotelRooms',function(req,res){
+router.post('/',function(req,res){
     res.send({type:'POST'});
 });
 
 
 //UPDATE hotel rooms
-router.put('/api/hotelRooms:id',function(req,res){
+router.put('/:id',function(req,res){
     res.send({type:'PUT'});
 });
 
 //DELETE hotel rooms
-router.delete('/api/hotelRoomsh/:id',function(req,res){
+router.delete('/:id',function(req,res){
     res.send({type:'DELETE'});
 });
 
