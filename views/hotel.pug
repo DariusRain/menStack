@@ -12,15 +12,16 @@ html
       .banner
         .container-row
             span(class="heading-text" style="width:79%")  JavaScript Hotels
-            a(href="../../" style="color: rgba(23, 31, 43) !important; font-weight: bolder; font-size: 35px;") Home
+            a(href="../../" style="color: rgba(23, 31, 43) !important; font-weight: bolder; font-size: 20px;")
+              img(src="https://bit.ly/3aBq2Cy", align="right" height="30px", alt="Home")
 
     div
     .jumbo
         .container-row-1 
-            h1(class="blue-me") Hotel <hr> <span style="color:white;"> #{data.hotelName}</span> <hr> 
-            h1(class="blue-me") Address <hr> <span style="color:white;"> #{data.street}, <br> #{data.city} #{data.state} </span> <hr>
-            h1(class="blue-me") Phone # <hr> <span style="color:white;"> #{data.phoneNumber} </span> <hr>
-            h1(class="blue-me") Available Rooms <hr> <span style="color:white;">  <img src="https://bit.ly/3cDwmer" height="20px;"> <span id="all_available_text"></span> <br> </span> <button>Book Now?</button> <hr>
+            h4(class="blue-me") Hotel <hr> <span style="color:white;"> #{data.hotelName}</span> <hr> 
+            h4(class="blue-me") Address <hr> <span style="color:white;"> #{data.street}, <br> #{data.city} #{data.state} </span> <hr>
+            h4(class="blue-me") Phone # <hr> <span style="color:white;"> #{data.phoneNumber} </span> <hr>
+            h4(class="blue-me") Available Rooms <hr> <span style="color:white;">  <img src="https://bit.ly/3cDwmer" height="10px;"> <span id="all_available_text"></span> <br> </span> <hr>
 
     div(id="display_room_overview")
         

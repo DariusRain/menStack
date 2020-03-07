@@ -66,7 +66,7 @@ const getAllData = (async () => {
 class roomCardElement {
     constructor(headingText, availibilityNumber, amountOfRooms) {
         let div = document.createElement("div")
-        let heading = document.createElement("h1");
+        let heading = document.createElement("h4");
         let availabilityTitle = document.createElement("span")
         let availablityText = document.createElement("span")
         let hr1 = document.createElement("hr")
@@ -85,9 +85,9 @@ class roomCardElement {
         div.className = 'rooms-display-card'
 
         heading.style = 'color: #6699cc;'
-        availabilityTitle.style= 'font-size: 20px; margin-bottom: 6px;'
-        button.style = ' width: 50%; margin:0 auto; margin-top: 12px;'
-        availablityText.style = 'font-size: 15px; margin-bottom: 12px;'
+        availabilityTitle.style= 'font-size: 13px; margin-bottom: 6px;'
+        button.style = ' width: 100%; color:rgb(21, 32, 43); margin:0 auto; margin-top: 12px;'
+        availablityText.style = 'font-size: 12px; margin-bottom: 12px;'
         hr1.style = 'width: 100%; margin-bottom: 30px; margin-top:0px;'
         hr2.style = 'width: 25%;'
         hr3.style = 'width: 100%;'
