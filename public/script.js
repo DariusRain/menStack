@@ -178,19 +178,25 @@ class HotelCard {
   constructor(hotelName, numberOfRooms, location, phoneNumber, linkUrl){
     let div = document.createElement("div");
     let hotelNameText = document.createElement("a");
+    let hr = document.createElement("hr")
     let numOfRooms = document.createElement("span")
     let locationOf = document.createElement("span")
     let phoneNumberOf = document.createElement("span")
     div.className = 'hotel-flex-item'
-    hotelNameText.style = 'font-size: 25px; font-weight: bolder; padding: 20px; text-align: center;'
+
+    hotelNameText.style = 'margin-bottom:12px; text-align: center;'
     locationOf.style = 'margin-bottom: 12px;'
     phoneNumberOf.style = 'margin-bottom: 12px;'
-    phoneNumberOf.innerText = `📞 \n ${phoneNumber}`
+    hr.style = " width: 100%; margin-bottom:12px;"
+    
     hotelNameText.setAttribute("href", linkUrl)
+
+    phoneNumberOf.innerText = `📞 \n ${phoneNumber}`
     hotelNameText.innerText = hotelName;
     numOfRooms.innerText = `🛌\n Rooms: ${numberOfRooms}`
     locationOf.innerText = `📍 \n ${location}`
     div.appendChild(hotelNameText)
+    div.appendChild(hr)
     div.appendChild(locationOf) 
     div.appendChild(phoneNumberOf);
     div.appendChild(numOfRooms) 
